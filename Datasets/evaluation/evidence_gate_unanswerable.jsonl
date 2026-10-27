@@ -1,0 +1,10 @@
+{"id":"ood_owasp_top10","query":"What are the OWASP Top 10 web application security risks?","answerable":false,"reason":"OWASP Top 10 is not an indexed source family."}
+{"id":"ood_cvss_scoring","query":"How is a CVSS base score calculated from attack vector and impact metrics?","answerable":false,"reason":"The indexed KEV records do not provide the CVSS scoring specification."}
+{"id":"ood_cwe_definition","query":"What does CWE-79 mean and how is it classified?","answerable":false,"reason":"CWE catalog definitions are not indexed as a source family."}
+{"id":"ood_splunk_query","query":"Write a Splunk SPL query to detect suspicious PowerShell execution.","answerable":false,"reason":"The index does not contain vendor-specific SIEM query examples."}
+{"id":"ood_incident_playbook","query":"Give me a complete ransomware incident response playbook for a hospital.","answerable":false,"reason":"The index is not a complete sector-specific incident-response playbook corpus."}
+{"id":"ood_cloud_policy","query":"What exact AWS IAM policy prevents every privilege escalation path?","answerable":false,"reason":"The index does not contain exhaustive AWS IAM policy guidance."}
+{"id":"ood_zero_day_advisory","query":"Summarize the latest zero-day advisories published today.","answerable":false,"reason":"The index is a versioned ATT&CK and KEV snapshot, not a live advisory feed."}
+{"id":"ood_packet_analysis","query":"Analyze this packet capture and identify the attacker's source IP.","answerable":false,"reason":"The app indexes explanatory records and does not ingest or analyze packet captures."}
+{"id":"ood_weather","query":"What is the weather forecast for Chennai this weekend?","answerable":false,"reason":"Weather information is outside the cybersecurity corpus."}
+{"id":"ood_quantum_physics","query":"Explain quantum entanglement and wave-particle duality.","answerable":false,"reason":"Physics concepts are outside the cybersecurity corpus."}

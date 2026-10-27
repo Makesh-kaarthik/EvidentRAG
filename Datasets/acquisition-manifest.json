@@ -1,0 +1,56 @@
+{
+  "manifest_version": 1,
+  "updated_at_utc": "2026-10-27T14:27:55.604163+00:00",
+  "entries": [
+    {
+      "id": "cisa-kev",
+      "path": "raw/cisa_known_exploited_vulnerabilities.json",
+      "source_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "license_summary": "CC0 1.0; third-party references retain their own terms.",
+      "bytes": 1810928,
+      "sha256": "653c72ea869cbca7a9198b5e17b97bef516b67494e89bb919a9639d4eedbfa13",
+      "record_count": 1758,
+      "retrieved_at_utc": "2026-10-27T07:57:49.650702+00:00"
+    },
+    {
+      "id": "mitre-enterprise",
+      "path": "raw/mitre_attack_enterprise_20.0.json",
+      "source_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-20.0.json",
+      "license_summary": "MITRE ATT&CK license; include the copyright designation and license with copies.",
+      "bytes": 55271014,
+      "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+      "record_count": 26690,
+      "retrieved_at_utc": "2026-10-27T07:57:49.691940+00:00"
+    },
+    {
+      "id": "license-cisa-kev",
+      "path": "licenses/CISA-KEV-LICENSE.txt",
+      "source_url": "https://raw.githubusercontent.com/cisagov/kev-data/develop/LICENSE",
+      "license_summary": "CC0 1.0 license text.",
+      "bytes": 7469,
+      "sha256": "8dfcf2d0cba33bede386eb470daf2ac08caf6540fc2516baab10dd546f90938a",
+      "retrieved_at_utc": "2026-10-27T07:57:49.692526+00:00"
+    },
+    {
+      "id": "license-mitre-attack",
+      "path": "licenses/MITRE-ATTACK-LICENSE.txt",
+      "source_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/LICENSE.txt",
+      "license_summary": "MITRE ATT&CK license text.",
+      "bytes": 1354,
+      "sha256": "738144f7fb054722a4ef9d3367c51710341dc12fc574c6ac3a41daaaecd8bf5e",
+      "retrieved_at_utc": "2026-10-27T07:57:49.692992+00:00"
+    },
+    {
+      "id": "nvd-cve-2026",
+      "path": "raw/nvd/nvdcve-2.0-2026.json",
+      "archive_path": "raw/nvd/nvdcve-2.0-2026.json.zip",
+      "source_url": "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-2026.json.zip",
+      "metadata_url": "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-2026.meta",
+      "license_summary": "NVD data is provided by NIST; check NIST terms and third-party reference rights.",
+      "bytes": 42050728,
+      "uncompressed_bytes": 493417964,
+      "sha256": "846afbd43dbf4e427512fea85bd2603352d77d3b0f696fa32fce9178e73f078d",
+      "retrieved_at_utc": "2026-10-27T14:27:55.604125+00:00"
+    }
+  ]
+}

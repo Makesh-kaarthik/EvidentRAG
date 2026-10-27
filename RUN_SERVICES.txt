@@ -1,0 +1,29 @@
+Cyber EvidentRAG — Run Frontend and Backend (PowerShell)
+========================================================
+
+Open two PowerShell terminals in the project folder:
+C:\Users\abhin\Documents\University Project\Application
+
+Terminal 1 — Backend
+--------------------
+cd "C:\Users\abhin\Documents\University Project\Application\backend"
+.\python313\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+
+Terminal 2 — Frontend
+---------------------
+cd "C:\Users\abhin\Documents\University Project\Application\frontend"
+npm run dev -- --host 127.0.0.1
+
+Open the app:
+http://127.0.0.1:5173/
+
+Backend health endpoint:
+http://127.0.0.1:8000/api/health
+
+Stop either service with Ctrl+C in its terminal.
+
+Requirements:
+- Start the backend first. It loads environment values from backend\.env.
+- Install frontend dependencies once with: npm install
+- The backend virtual environment and Python dependencies should already exist in backend\python313.
+- Investigation conversations are saved in MongoDB and limited to six user questions each.

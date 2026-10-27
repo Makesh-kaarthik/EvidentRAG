@@ -1,0 +1,3 @@
+# Raw datasets are acquired from their upstream sources; keep manifests and documentation.
+/raw/*
+!/raw/.gitkeep

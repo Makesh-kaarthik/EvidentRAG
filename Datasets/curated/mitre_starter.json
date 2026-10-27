@@ -1,0 +1,30 @@
+[
+  {
+    "source_id": "mitre-attack-T1003",
+    "title": "OS Credential Dumping (T1003)",
+    "source": "MITRE ATT&CK",
+    "url": "https://attack.mitre.org/techniques/T1003/",
+    "text": "MITRE ATT&CK describes OS Credential Dumping as an adversary technique for obtaining account login and credential material, commonly hashes or cleartext passwords. Credential material may be taken from operating-system caches, memory, or other structures. The resulting credentials can be used for lateral movement or to access restricted information. ATT&CK classifies T1003 under Credential Access and lists Linux, Windows, and macOS as platforms."
+  },
+  {
+    "source_id": "mitre-attack-T1021",
+    "title": "Remote Services (T1021)",
+    "source": "MITRE ATT&CK",
+    "url": "https://attack.mitre.org/techniques/T1021/",
+    "text": "MITRE ATT&CK describes Remote Services as a lateral-movement technique. Adversaries may use valid accounts to log in to services that accept remote connections, including Telnet, SSH, and VNC. ATT&CK documents several sub-techniques, including Remote Desktop Protocol, SMB and Windows Admin Shares, SSH, and Windows Remote Management. Defenders can limit which accounts may use remote services, use multifactor authentication where possible, and restrict unnecessary remote access."
+  },
+  {
+    "source_id": "mitre-attack-T1021-001",
+    "title": "Remote Desktop Protocol (T1021.001)",
+    "source": "MITRE ATT&CK",
+    "url": "https://attack.mitre.org/techniques/T1021/001/",
+    "text": "MITRE ATT&CK describes Remote Desktop Protocol as a sub-technique of Remote Services. Adversaries may connect to a remote system over RDP or RDS to expand access when the service is enabled and accounts with known credentials can use it. Defenders should disable RDP when it is not required and limit accounts and network paths that can access remote services."
+  },
+  {
+    "source_id": "mitre-attack-T1078",
+    "title": "Valid Accounts (T1078)",
+    "source": "MITRE ATT&CK",
+    "url": "https://attack.mitre.org/techniques/T1078/",
+    "text": "MITRE ATT&CK describes Valid Accounts as adversaries obtaining and abusing credentials for existing accounts. Abused accounts can support initial access, persistence, privilege escalation, or defense evasion. Valid credentials may bypass access controls and provide access to remote systems or services. ATT&CK notes that adversaries may use legitimate access without malware to make activity harder to detect. Defenses include auditing accounts and permissions, disabling unneeded accounts, and applying strong account-management practices."
+  }
+]

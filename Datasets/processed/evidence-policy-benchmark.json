@@ -1,0 +1,98 @@
+{
+  "corpus": "C:\\Users\\abhin\\Documents\\University Project\\Application\\Datasets\\processed\\index_documents.jsonl",
+  "corpus_source_type": "attack-pattern",
+  "corpus_documents": 706,
+  "cases": 18,
+  "answerable_cases": 12,
+  "unanswerable_cases": 6,
+  "top_k": 5,
+  "repeats_per_case_policy": 5,
+  "policies": {
+    "no_gate": {
+      "unsupported_answers": 8,
+      "unsupported_answer_rate_among_accepted": 0.4444,
+      "unanswerable_query_false_accept_rate": 1.0,
+      "false_abstentions": 0,
+      "false_abstention_rate": 0.0,
+      "gate_false_abstentions_when_gold_was_retrieved": 0,
+      "supported_answer_rate": 0.8333,
+      "answerable_retrieval_misses": 2,
+      "retrieval_hit_at_5": 0.8333,
+      "gold_source_citation_available_rate_when_accepted": 0.8333,
+      "median_latency_ms": 1.215,
+      "confusion_counts": {
+        "tp": 10,
+        "fp": 8,
+        "tn": 0,
+        "fn": 0,
+        "retrieval_hit": 10
+      }
+    },
+    "relevance_only": {
+      "unsupported_answers": 5,
+      "unsupported_answer_rate_among_accepted": 0.3333,
+      "unanswerable_query_false_accept_rate": 0.5,
+      "false_abstentions": 0,
+      "false_abstention_rate": 0.0,
+      "gate_false_abstentions_when_gold_was_retrieved": 0,
+      "supported_answer_rate": 0.8333,
+      "answerable_retrieval_misses": 2,
+      "retrieval_hit_at_5": 0.8333,
+      "gold_source_citation_available_rate_when_accepted": 0.8333,
+      "median_latency_ms": 1.111,
+      "confusion_counts": {
+        "tp": 10,
+        "fp": 5,
+        "tn": 3,
+        "fn": 0,
+        "retrieval_hit": 10
+      }
+    },
+    "coverage_only": {
+      "unsupported_answers": 6,
+      "unsupported_answer_rate_among_accepted": 0.375,
+      "unanswerable_query_false_accept_rate": 0.6667,
+      "false_abstentions": 0,
+      "false_abstention_rate": 0.0,
+      "gate_false_abstentions_when_gold_was_retrieved": 0,
+      "supported_answer_rate": 0.8333,
+      "answerable_retrieval_misses": 2,
+      "retrieval_hit_at_5": 0.8333,
+      "gold_source_citation_available_rate_when_accepted": 0.8333,
+      "median_latency_ms": 1.07,
+      "confusion_counts": {
+        "tp": 10,
+        "fp": 6,
+        "tn": 2,
+        "fn": 0,
+        "retrieval_hit": 10
+      }
+    },
+    "current": {
+      "unsupported_answers": 5,
+      "unsupported_answer_rate_among_accepted": 0.3333,
+      "unanswerable_query_false_accept_rate": 0.5,
+      "false_abstentions": 0,
+      "false_abstention_rate": 0.0,
+      "gate_false_abstentions_when_gold_was_retrieved": 0,
+      "supported_answer_rate": 0.8333,
+      "answerable_retrieval_misses": 2,
+      "retrieval_hit_at_5": 0.8333,
+      "gold_source_citation_available_rate_when_accepted": 0.8333,
+      "median_latency_ms": 1.164,
+      "confusion_counts": {
+        "tp": 10,
+        "fp": 5,
+        "tn": 3,
+        "fn": 0,
+        "retrieval_hit": 10
+      }
+    }
+  },
+  "limitations": [
+    "Offline replay of the processed corpus; live MongoDB Atlas DNS was unavailable.",
+    "Unsupported answers and false abstentions are labelled by this small gold set.",
+    "Citation metric is gold-source availability in the offered result list, not LLM citation validity or claim entailment.",
+    "Latency is warm local retrieval plus gate time; it excludes network, API generation, and MongoDB latency."
+  ]
+}

@@ -216,5 +216,30 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# EvidentRAG local credentials and environments
+**/.env
+**/.env.*
+!**/.env.example
+**/*.env
+**/1.env
+**/python313/
+**/.venv/
+**/venv/
+**/__pycache__/
+**/node_modules/
+**/dist/
+**/dist-ssr/
+
+# Dataset payloads are too large or generated locally; keep benchmark reports.
+Datasets/raw/
+Datasets/processed/*
+!Datasets/processed/evidence-policy-benchmark.json
+!Datasets/processed/evidence-policy-benchmark-cases.csv
+!Datasets/processed/evidence-policy-benchmark-live.json
+!Datasets/processed/evidence-policy-benchmark-cases-live.csv
+
+# Local rendered slide previews
+template-inspect/
+
 # Streamlit
 .streamlit/secrets.toml

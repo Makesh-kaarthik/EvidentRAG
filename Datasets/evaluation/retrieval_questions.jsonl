@@ -1,0 +1,44 @@
+{"id": "attack_exact_technique", "query": "What does ATT&CK technique T1059 describe?", "relevant_source_ids": ["T1059"]}
+{"id": "attack_powershell_paraphrase", "query": "Which ATT&CK sub-technique uses PowerShell to execute commands?", "relevant_source_ids": ["T1059.001"]}
+{"id": "attack_credential_dumping", "query": "Which technique covers operating system credential dumping?", "relevant_source_ids": ["T1003"]}
+{"id": "attack_spearphishing_attachment", "query": "Which technique involves spearphishing attachments?", "relevant_source_ids": ["T1566.001", "T1598.002"]}
+{"id": "attack_remote_services", "query": "Which ATT&CK technique uses remote services for lateral movement?", "relevant_source_ids": ["T1021"]}
+{"id": "attack_credential_mitigation", "query": "Which mitigation helps protect credentials from theft and dumping?", "relevant_source_ids": ["M1043"]}
+{"id": "attack_lateral_movement_tactic", "query": "Which ATT&CK tactic covers moving through a compromised network?", "relevant_source_ids": ["TA0008"]}
+{"id": "kev_log4shell_exact", "query": "What is the affected product and required action for CVE-2021-44228?", "relevant_source_ids": ["CVE-2021-44228"]}
+{"id": "kev_printnightmare_exact", "query": "What component and remediation are listed for CVE-2021-34527?", "relevant_source_ids": ["CVE-2021-34527"]}
+{"id": "kev_moveit_exact", "query": "What is the required action for CVE-2023-34362?", "relevant_source_ids": ["CVE-2023-34362"]}
+{"id": "kev_log4shell_paraphrase", "query": "Which known exploited vulnerability affected Apache Log4j2 through JNDI lookups?", "relevant_source_ids": ["CVE-2021-44228"]}
+{"id": "attack_command_interpreter_paraphrase", "query": "How are command and scripting interpreters used to run commands?", "relevant_source_ids": ["T1059"]}
+{"id": "kev_teamcity_auth_bypass", "query": "Which CISA KEV vulnerability allowed authentication bypass in JetBrains TeamCity?", "relevant_source_ids": ["CVE-2024-27198"]}
+{"id": "attack_valid_accounts_paraphrase", "query": "How do adversaries use legitimate accounts to access other systems?", "relevant_source_ids": ["T1078"]}
+{"id": "attack_brute_force_paraphrase", "query": "Which technique repeatedly guesses passwords to break into an account?", "relevant_source_ids": ["T1110"]}
+{"id": "attack_obfuscation_paraphrase", "query": "How do attackers hide malicious code by changing or disguising files?", "relevant_source_ids": ["T1027"]}
+{"id": "attack_account_discovery_paraphrase", "query": "Which technique enumerates local or domain user accounts?", "relevant_source_ids": ["T1087", "T1087.001", "T1087.002"]}
+{"id": "attack_public_app_exploitation", "query": "What technique exploits an internet-facing application to gain access?", "relevant_source_ids": ["T1190"]}
+{"id": "attack_scheduled_task_subtechnique", "query": "Which Windows sub-technique abuses scheduled tasks to run code later?", "relevant_source_ids": ["T1053.005"]}
+{"id": "attack_rdp_lateral_movement", "query": "Which ATT&CK sub-technique uses Remote Desktop Protocol for lateral movement?", "relevant_source_ids": ["T1021.001"]}
+{"id": "attack_vnc_remote_service", "query": "Which remote-services sub-technique uses VNC to access another computer?", "relevant_source_ids": ["T1021.005"]}
+{"id": "attack_system_information_discovery", "query": "Which technique gathers operating-system and hardware details from a host?", "relevant_source_ids": ["T1082"]}
+{"id": "attack_network_segmentation_mitigation", "query": "Which mitigation restricts lateral movement by separating network zones?", "relevant_source_ids": ["M1030"]}
+{"id": "attack_privileged_account_mitigation", "query": "Which mitigation reduces risk by controlling administrator and other privileged accounts?", "relevant_source_ids": ["M1026"]}
+{"id": "attack_initial_access_tactic", "query": "Which ATT&CK tactic describes obtaining the first foothold in a target network?", "relevant_source_ids": ["TA0001"]}
+{"id": "kev_exchange_server_paraphrase", "query": "Which CISA KEV entry covers the Microsoft Exchange Server ProxyLogon vulnerability?", "relevant_source_ids": ["CVE-2021-26855"]}
+{"id": "kev_follina_paraphrase", "query": "Which Windows MSDT flaw is commonly called Follina and can be triggered by an Office document?", "relevant_source_ids": ["CVE-2022-30190"]}
+{"id": "kev_outlook_paraphrase", "query": "Which Microsoft Outlook privilege escalation vulnerability enables NTLM relay authentication as the user?", "relevant_source_ids": ["CVE-2023-23397"]}
+{"id": "kev_fortinet_ssl_vpn_paraphrase", "query": "Which FortiOS and FortiProxy SSL-VPN heap overflow is on CISA's exploited list?", "relevant_source_ids": ["CVE-2023-27997"]}
+{"id": "kev_ivanti_command_injection", "query": "Which Ivanti Connect Secure command-injection flaw is listed in KEV?", "relevant_source_ids": ["CVE-2024-21887"]}
+{"id": "kev_panos_globalprotect_command_injection", "query": "Which Palo Alto PAN-OS CVE allowed command injection through GlobalProtect?", "relevant_source_ids": ["CVE-2024-3400"]}
+{"id": "attack_obfuscation_term_match", "query": "Which ATT&CK technique obfuscates files or information to avoid detection?", "relevant_source_ids": ["T1027"]}
+{"id": "attack_command_obfuscation_subtechnique", "query": "Which sub-technique changes commands so security tools have difficulty detecting them?", "relevant_source_ids": ["T1027.010"]}
+{"id": "attack_host_system_information", "query": "Which discovery technique collects information about a host's operating system, hardware, and installed software?", "relevant_source_ids": ["T1082"]}
+{"id": "attack_operating_system_discovery", "query": "What technique identifies a computer's operating-system version and host configuration?", "relevant_source_ids": ["T1082"]}
+{"id": "attack_public_facing_application_exploit", "query": "Which initial-access technique exploits a public-facing application?", "relevant_source_ids": ["T1190"]}
+{"id": "attack_vulnerable_internet_service", "query": "What ATT&CK technique gains entry by exploiting a vulnerable internet-facing service?", "relevant_source_ids": ["T1190"]}
+{"id": "attack_network_segmentation_prevention", "query": "Which mitigation prevents movement between systems by segmenting the network?", "relevant_source_ids": ["M1030"]}
+{"id": "attack_isolated_network_zones", "query": "What countermeasure partitions a network into isolated zones to limit attacker movement?", "relevant_source_ids": ["M1030"]}
+{"id": "attack_admin_privilege_mitigation", "query": "Which mitigation restricts the use of administrator and other privileged accounts?", "relevant_source_ids": ["M1026"]}
+{"id": "attack_privileged_account_mgmt_exact", "query": "Which ATT&CK mitigation is named Privileged Account Management?", "relevant_source_ids": ["M1026"]}
+{"id": "attack_local_account_subtechnique", "query": "Which ATT&CK sub-technique enumerates local accounts on an endpoint?", "relevant_source_ids": ["T1087.001"]}
+{"id": "attack_domain_account_subtechnique", "query": "Which sub-technique lists user accounts in an Active Directory domain?", "relevant_source_ids": ["T1087.002"]}
+{"id": "attack_obfuscation_detection_paraphrase", "query": "How do adversaries encode or transform payloads to evade signature-based detection?", "relevant_source_ids": ["T1027"]}

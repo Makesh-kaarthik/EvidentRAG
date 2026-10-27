@@ -1,0 +1,590 @@
+{
+  "document_count": 2524,
+  "question_count": 12,
+  "corpus_sha256": "b3ab2b540ea6aab0fcfcf20b61b1b19cff6c964342373437ee74086236914060",
+  "corpus_generated_at_utc": "2026-10-27T08:32:28.791439+00:00",
+  "metrics": {
+    "recall_at_5": 0.9167,
+    "mean_reciprocal_rank": 0.7708,
+    "top_1_accuracy": 0.6667
+  },
+  "results": [
+    {
+      "id": "attack_exact_technique",
+      "query": "What does ATT&CK technique T1059 describe?",
+      "expected_ids": [
+        "T1059"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "T1059",
+          "title": "Command and Scripting Interpreter (T1059)",
+          "source_type": "attack-pattern",
+          "score": 18.1395,
+          "exact_identifier": true
+        },
+        {
+          "upstream_id": "T1680",
+          "title": "Local Storage Discovery (T1680)",
+          "source_type": "attack-pattern",
+          "score": 13.6342,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1580",
+          "title": "Cloud Infrastructure Discovery (T1580)",
+          "source_type": "attack-pattern",
+          "score": 11.0163,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1082",
+          "title": "System Information Discovery (T1082)",
+          "source_type": "attack-pattern",
+          "score": 10.5655,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1005",
+          "title": "Data from Local System (T1005)",
+          "source_type": "attack-pattern",
+          "score": 10.1264,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_powershell_paraphrase",
+      "query": "Which ATT&CK sub-technique uses PowerShell to execute commands?",
+      "expected_ids": [
+        "T1059.001"
+      ],
+      "first_relevant_rank": 3,
+      "reciprocal_rank": 0.3333,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "mitre-attack-T1021-001",
+          "title": "Remote Desktop Protocol (T1021.001)",
+          "source_type": "curated-starter",
+          "score": 14.655,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1059.003",
+          "title": "Windows Command Shell (T1059.003)",
+          "source_type": "attack-pattern",
+          "score": 14.5499,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1059.001",
+          "title": "PowerShell (T1059.001)",
+          "source_type": "attack-pattern",
+          "score": 13.6429,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1216.002",
+          "title": "SyncAppvPublishingServer (T1216.002)",
+          "source_type": "attack-pattern",
+          "score": 13.1905,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1546.013",
+          "title": "PowerShell Profile (T1546.013)",
+          "source_type": "attack-pattern",
+          "score": 13.0826,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_credential_dumping",
+      "query": "Which technique covers operating system credential dumping?",
+      "expected_ids": [
+        "T1003"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "T1003",
+          "title": "OS Credential Dumping (T1003)",
+          "source_type": "attack-pattern",
+          "score": 17.8915,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "M1043",
+          "title": "Credential Access Protection (M1043)",
+          "source_type": "course-of-action",
+          "score": 15.3888,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1056.001",
+          "title": "Keylogging (T1056.001)",
+          "source_type": "attack-pattern",
+          "score": 14.2288,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1003.004",
+          "title": "LSA Secrets (T1003.004)",
+          "source_type": "attack-pattern",
+          "score": 13.8591,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1675",
+          "title": "ESXi Administration Command (T1675)",
+          "source_type": "attack-pattern",
+          "score": 12.1115,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_spearphishing_attachment",
+      "query": "Which technique involves spearphishing attachments?",
+      "expected_ids": [
+        "T1566.001",
+        "T1598.002"
+      ],
+      "first_relevant_rank": 2,
+      "reciprocal_rank": 0.5,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "T1566.003",
+          "title": "Spearphishing via Service (T1566.003)",
+          "source_type": "attack-pattern",
+          "score": 13.1028,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1598.002",
+          "title": "Spearphishing Attachment (T1598.002)",
+          "source_type": "attack-pattern",
+          "score": 12.3043,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1598.001",
+          "title": "Spearphishing Service (T1598.001)",
+          "source_type": "attack-pattern",
+          "score": 12.1434,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1566.004",
+          "title": "Spearphishing Voice (T1566.004)",
+          "source_type": "attack-pattern",
+          "score": 11.9538,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1598.004",
+          "title": "Spearphishing Voice (T1598.004)",
+          "source_type": "attack-pattern",
+          "score": 11.2474,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_remote_services",
+      "query": "Which ATT&CK technique uses remote services for lateral movement?",
+      "expected_ids": [
+        "T1021"
+      ],
+      "first_relevant_rank": 12,
+      "reciprocal_rank": 0.0833,
+      "hit_at_1": false,
+      "hit_at_5": false,
+      "top_5": [
+        {
+          "upstream_id": "TA0008",
+          "title": "Lateral Movement (TA0008)",
+          "source_type": "x-mitre-tactic",
+          "score": 20.5517,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1210",
+          "title": "Exploitation of Remote Services (T1210)",
+          "source_type": "attack-pattern",
+          "score": 18.7411,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1550.002",
+          "title": "Pass the Hash (T1550.002)",
+          "source_type": "attack-pattern",
+          "score": 17.9297,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1021.005",
+          "title": "VNC (T1021.005)",
+          "source_type": "attack-pattern",
+          "score": 16.4923,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1570",
+          "title": "Lateral Tool Transfer (T1570)",
+          "source_type": "attack-pattern",
+          "score": 16.2005,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_credential_mitigation",
+      "query": "Which mitigation helps protect credentials from theft and dumping?",
+      "expected_ids": [
+        "M1043"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "M1043",
+          "title": "Credential Access Protection (M1043)",
+          "source_type": "course-of-action",
+          "score": 18.8923,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "M1025",
+          "title": "Privileged Process Integrity (M1025)",
+          "source_type": "course-of-action",
+          "score": 12.1883,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1078.002",
+          "title": "Domain Accounts (T1078.002)",
+          "source_type": "attack-pattern",
+          "score": 12.1732,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "M1041",
+          "title": "Encrypt Sensitive Information (M1041)",
+          "source_type": "course-of-action",
+          "score": 11.7764,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1003",
+          "title": "OS Credential Dumping (T1003)",
+          "source_type": "attack-pattern",
+          "score": 10.9058,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_lateral_movement_tactic",
+      "query": "Which ATT&CK tactic covers moving through a compromised network?",
+      "expected_ids": [
+        "TA0008"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "TA0008",
+          "title": "Lateral Movement (TA0008)",
+          "source_type": "x-mitre-tactic",
+          "score": 17.7952,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "TA0011",
+          "title": "Command and Control (TA0011)",
+          "source_type": "x-mitre-tactic",
+          "score": 17.6532,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "TA0001",
+          "title": "Initial Access (TA0001)",
+          "source_type": "x-mitre-tactic",
+          "score": 16.3414,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "TA0004",
+          "title": "Privilege Escalation (TA0004)",
+          "source_type": "x-mitre-tactic",
+          "score": 14.901,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "TA0010",
+          "title": "Exfiltration (TA0010)",
+          "source_type": "x-mitre-tactic",
+          "score": 13.6514,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "kev_log4shell_exact",
+      "query": "What is the affected product and required action for CVE-2021-44228?",
+      "expected_ids": [
+        "CVE-2021-44228"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "CVE-2021-44228",
+          "title": "CVE-2021-44228: Apache Log4j2 Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 26.7129,
+          "exact_identifier": true
+        },
+        {
+          "upstream_id": "CVE-2021-45046",
+          "title": "CVE-2021-45046: Apache Log4j2 Deserialization of Untrusted Data Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 9.1534,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2017-6744",
+          "title": "CVE-2017-6744: Cisco IOS Software SNMP Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 6.558,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2018-0147",
+          "title": "CVE-2018-0147: Cisco Secure Access Control System Java Deserialization Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 5.9383,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2017-6739",
+          "title": "CVE-2017-6739: Cisco IOS and IOS XE Software SNMP Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 5.9201,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "kev_printnightmare_exact",
+      "query": "What component and remediation are listed for CVE-2021-34527?",
+      "expected_ids": [
+        "CVE-2021-34527"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "CVE-2021-34527",
+          "title": "CVE-2021-34527: Microsoft Windows Print Spooler Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 21.5807,
+          "exact_identifier": true
+        },
+        {
+          "upstream_id": "CVE-2022-22071",
+          "title": "CVE-2022-22071: Qualcomm Multiple Chipsets Use-After-Free Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 7.9573,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2023-33107",
+          "title": "CVE-2023-33107: Qualcomm Multiple Chipsets Integer Overflow Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 7.809,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2023-33063",
+          "title": "CVE-2023-33063: Qualcomm Multiple Chipsets Use-After-Free Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 7.7801,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2023-33106",
+          "title": "CVE-2023-33106: Qualcomm Multiple Chipsets Use of Out-of-Range Pointer Offset Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 7.6383,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "kev_moveit_exact",
+      "query": "What is the required action for CVE-2023-34362?",
+      "expected_ids": [
+        "CVE-2023-34362"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "CVE-2023-34362",
+          "title": "CVE-2023-34362: Progress MOVEit Transfer SQL Injection Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 22.1014,
+          "exact_identifier": true
+        },
+        {
+          "upstream_id": "CVE-2021-1906",
+          "title": "CVE-2021-1906: Qualcomm Multiple Chipsets Detection of Error Condition Without Action Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 1.0588,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2016-0752",
+          "title": "CVE-2016-0752: Ruby on Rails Directory Traversal Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 0.9892,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2025-30154",
+          "title": "CVE-2025-30154: reviewdog/action-setup GitHub Action Embedded Malicious Code Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 0.9742,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2015-2051",
+          "title": "CVE-2015-2051: D-Link DIR-645 Router Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 0.9577,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "kev_log4shell_paraphrase",
+      "query": "Which known exploited vulnerability affected Apache Log4j2 through JNDI lookups?",
+      "expected_ids": [
+        "CVE-2021-44228"
+      ],
+      "first_relevant_rank": 1,
+      "reciprocal_rank": 1.0,
+      "hit_at_1": true,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "CVE-2021-44228",
+          "title": "CVE-2021-44228: Apache Log4j2 Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 34.7069,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2021-45046",
+          "title": "CVE-2021-45046: Apache Log4j2 Deserialization of Untrusted Data Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 22.8507,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2016-8735",
+          "title": "CVE-2016-8735: Apache Tomcat Remote Code Execution Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 12.7187,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2020-17519",
+          "title": "CVE-2020-17519: Apache Flink Improper Access Control Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 11.3656,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "CVE-2020-1938",
+          "title": "CVE-2020-1938: Apache Tomcat Improper Privilege Management Vulnerability",
+          "source_type": "cisa-kev",
+          "score": 9.9655,
+          "exact_identifier": false
+        }
+      ]
+    },
+    {
+      "id": "attack_command_interpreter_paraphrase",
+      "query": "How are command and scripting interpreters used to run commands?",
+      "expected_ids": [
+        "T1059"
+      ],
+      "first_relevant_rank": 3,
+      "reciprocal_rank": 0.3333,
+      "hit_at_1": false,
+      "hit_at_5": true,
+      "top_5": [
+        {
+          "upstream_id": "T1059.008",
+          "title": "Network Device CLI (T1059.008)",
+          "source_type": "attack-pattern",
+          "score": 19.3255,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1202",
+          "title": "Indirect Command Execution (T1202)",
+          "source_type": "attack-pattern",
+          "score": 18.1304,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1059",
+          "title": "Command and Scripting Interpreter (T1059)",
+          "source_type": "attack-pattern",
+          "score": 17.7531,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1059.003",
+          "title": "Windows Command Shell (T1059.003)",
+          "source_type": "attack-pattern",
+          "score": 16.0768,
+          "exact_identifier": false
+        },
+        {
+          "upstream_id": "T1070.003",
+          "title": "Clear Command History (T1070.003)",
+          "source_type": "attack-pattern",
+          "score": 15.8906,
+          "exact_identifier": false
+        }
+      ]
+    }
+  ]
+}

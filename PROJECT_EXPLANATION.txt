@@ -1,0 +1,83 @@
+CYBER EVIDENTRAG - PROJECT EXPLANATION
+Reviewed: 27 October 2026
+
+PURPOSE
+Cyber EvidentRAG is a cybersecurity question-answering prototype. It retrieves evidence from a locally indexed knowledge collection, checks whether the evidence is adequate, builds a bounded prompt, generates a cited response with a configured language model, and rejects responses that fail basic citation checks. The design aims to keep acquisition, normalization, indexing, retrieval, evidence assessment, and prompt construction deterministic and local. A model provider is used only for final answer generation.
+
+PROJECT AT A GLANCE
+Application contains a Python 3.13 backend, a React/Vite browser interface, source-data acquisition and processing tools, a preprocessed 83,307-record JSONL corpus, evaluation datasets and reports, operational notes, and 13 JPEG slide images in template-inspect. The root University Project folder also has a PowerPoint template, a README, and environment credential files; these are surrounding project materials rather than application source code.
+
+HOW A QUESTION IS ANSWERED
+1. The browser sends a question and optional conversation/model choice to the FastAPI backend through the Vite /api proxy.
+2. The backend loads up to the configured MongoDB knowledge-record limit and scores records with BM25. Tokenization is local; selected cybersecurity synonyms, phrase/title boosts, and exact CVE or ATT&CK identifier boosts improve matching. The top results are returned.
+3. An evidence gate estimates relevance and query-term coverage over the leading records. Exact-identifier matches can pass directly. If evidence is weak, the service abstains without asking a generation model.
+4. A deterministic prompt optimizer classifies the question's likely intent, selects evidence under a character budget, attaches source labels, and places hostile source text in an evidence section separate from the trusted instruction.
+5. Gemini or an allowlisted OpenRouter text model generates the answer. The validator requires citations on factual sentences, checks that citation labels exist, and checks cited text for lexical overlap, identifiers, and numbers. Failure produces an abstention-style message.
+6. The API returns the answer, evidence sources, heuristic confidence/coverage/relevance figures, pipeline status, and selected model. Investigation conversations are stored in MongoDB and limited to six user questions each.
+
+The evidence and confidence scores are heuristics, not calibrated probabilities. Citation overlap does not prove semantic entailment and can reject valid paraphrases. The service reports cross-encoder reranking as not implemented. Although the design notes mention a 5,000-record scan ceiling, the current backend setting defaults to MAX_KNOWLEDGE_CHUNKS=100000; this is configurable. Retrieval loads records into application memory and computes scores in Python, so a database search/inverted-index design would be needed for substantially larger corpora.
+
+APPLICATION ROOT FILES
+PROJECT_IDEA.md describes the intended data flow, implementation scope, security model for untrusted source text, and future work.
+RUN_SERVICES.txt gives Windows PowerShell instructions for launching the API and web interface and names the health endpoint.
+
+BACKEND: Application/backend
+app/main.py creates the FastAPI application, configures CORS, opens MongoDB for the application lifespan, and mounts API routes under /api.
+app/api/routes.py exposes health, model-list, conversation list/create/read, and query endpoints. It enforces request handling and maps database/provider failures to API errors.
+app/models/schemas.py defines and validates query requests, response fields, source information, and pipeline status.
+app/core/config.py reads settings from the backend environment file and declares database, provider, retrieval, evidence, prompt, and citation parameters.
+app/core/database.py creates and checks the MongoDB client and provides the configured database handle.
+app/services/text_index.py defines shared text normalization, tokenization, stop words, query synonym and phrase expansion, identifier extraction, and term-frequency creation.
+app/services/hybrid_retrieval.py implements local BM25 scoring and ranking, identifier boosts, and title/technique scoring. Despite the module name, the active search is lexical rather than vector-based.
+app/services/evidence_intelligence.py calculates heuristic relevance, query coverage, confidence, and the evidence sufficiency decision.
+app/services/prompt_optimizer.py selects and trims retrieved passages, assigns E1-style labels, classifies intent, and writes trusted generation instructions separately from retrieved evidence.
+app/services/citation_validation.py checks that generated factual sentences cite supplied labels and that terms, IDs, and numbers have support in the cited excerpts.
+app/services/gemini_client.py and openrouter_client.py make the final generation requests to their respective provider APIs.
+app/services/model_catalog.py provides the allowlist and display metadata for selectable models.
+app/services/conversations.py stores short investigations and their messages in MongoDB, reserves turns atomically, and caps each investigation at six questions.
+app/scripts/index_sources.py creates term-frequency metadata and stable chunk identifiers, then upserts prepared source documents to MongoDB in resumable batches. It does not call an LLM and removes obsolete embedding fields.
+app/scripts/ingest_datasets.py and ingest_seed_knowledge.py are compatibility entry points that invoke the current local indexer.
+check_mongodb.py pings the configured database without printing the URI or credentials.
+requirements.txt pins the backend Python packages. python313/ is a bundled Windows Python 3.13 runtime with installed dependencies; it is environment/runtime content rather than application source. __pycache__ folders are generated Python bytecode.
+
+env files contain database/provider configuration and potentially credentials. They are intentionally not reproduced in this report. .env.example is the safe template; backend/.gitignore excludes .env, virtual environments, bytecode, and pytest cache. The extra backend/1.env file should be treated as a local configuration artifact and checked before sharing. The project-root atlas-credentials.env is also sensitive and should not be copied into reports or public repositories.
+
+FRONTEND: Application/frontend
+package.json and package-lock.json define a React 19 and Vite 8 application and its installed package versions and npm scripts. The available scripts are dev, build, lint, and preview.
+index.html is the browser entry page and sets the Cyber EvidentRAG title and favicon.
+vite.config.js enables React and proxies /api requests to the local backend at 127.0.0.1:8000.
+public/favicon.svg is the browser icon.
+src/main.jsx mounts the React application. src/App.jsx currently contains the main interface and most application behavior: suggested cybersecurity questions, model selection, conversation history, query submission, answer/evidence state, and display interactions. src/App.css contains the primary application styling; src/index.css provides a small global entry style.
+The files under src/components (chat, common, evidence, layout), src/hooks/useChat.js, src/services/api.js, and src/styles are currently empty placeholders. Therefore the interface has not yet been split into the component/service structure suggested by those folder names. frontend/node_modules and frontend/dist are installed/build output directories and are excluded by .gitignore; they are not authored source.
+
+DATASETS: Application/Datasets
+README.md explains the data layout, acquisition, processing, indexing, evaluation, and source-use notes.
+catalog.json is the source registry: it records purpose, source URLs, refresh guidance, licensing/attribution notes, and implementation status.
+acquisition-manifest.json records retrieval times, sizes, source locations, checksums, and record metadata for the downloaded sources and license files.
+acquire_sources.py downloads supported source snapshots and verifies NVD archive metadata/integrity. It records provenance; it does not index data or contact a language model.
+prepare_index_documents.py normalizes supported data into compact records with source IDs, titles, URLs, source/version/type metadata, normalized text, and content hashes. The current processed manifest reports 83,307 records: 80,783 NVD CVEs, 1,758 CISA KEV entries, 706 ATT&CK techniques, 44 ATT&CK mitigations, 15 ATT&CK tactics, and 1 curated starter record.
+curated/mitre_starter.json contains a small hand-curated ATT&CK starter corpus.
+raw/ stores source snapshots: CISA KEV JSON (about 1.8 MB), MITRE ATT&CK Enterprise 20.0 STIX JSON (about 55.3 MB), and NVD 2026 JSON (about 493.4 MB uncompressed plus a ZIP archive about 42.1 MB). raw/.gitkeep preserves the otherwise-empty directory where applicable. The large source downloads are retained for reproducibility; check ignore/status rules before distributing them.
+processed/index_documents.jsonl is the normalized retrieval corpus (about 139.7 MB in the reviewed checkout). processing-manifest.json records input versions, selected object types, output checksum, and counts. Regenerate it after refreshing a source.
+licenses/ contains the MITRE ATT&CK license and CISA KEV CC0 text; consult catalog notes for attribution and third-party references.
+evaluation/retrieval_questions.jsonl is the held-out query set. Other JSONL/JSON files in evaluation preserve historical baselines, the current retrieval result, MongoDB comparison results, and hand-written out-of-corpus evidence-gate controls/results. evaluate_retrieval.py scores offline and optionally performs a read-only MongoDB comparison; evaluate_evidence_gate.py compares evidence-gate policies. The README documents reported diagnostic metrics and cautions that these small sets are not representative reliability claims.
+CWE/CAPEC, CISA advisory parsing, and CIC-IDS2017 ingestion are listed as future/optional work and are not included in the active searchable corpus. CIC-IDS2017 is described as a separate detection benchmark, not a general RAG text source.
+
+EVALUATION AND TESTS
+backend/tests contains six unittest files covering the API integration path, citation validation, evidence sufficiency, hybrid retrieval, prompt construction, and text indexing. The dataset README reports 40 backend unit tests passing, while a local count of test_ methods in the current files finds 44; the exact test-run result was not independently rerun for this report. Saved retrieval reports include a current 44-question offline result and earlier baselines. The README states current offline Recall@5 100%, MRR 0.772, and top-1 accuracy 61.4%; these are results on the project’s own limited diagnostic set, not a broad benchmark. The saved MongoDB comparison is partial (31 questions); a later full 44-question live comparison was recorded as unverified after a connection failure. Evaluation scripts do not generate answers and do not measure semantic correctness of generated citations.
+
+TEMPLATE MATERIAL
+Application/template-inspect contains 13 JPEG slide images named slide-01.jpg through slide-13.jpg. They appear to be slide/template inspection references. The root University Project folder also contains 4 Review 2 PPT Template.pptx. Neither is read by the running web application based on the inspected project entry points.
+
+RUNNING THE PROJECT
+1. Configure Application/backend/.env from .env.example with a reachable MongoDB URI and at least one provider API key. Keep real keys private.
+2. From Application/Datasets, run the bundled Python interpreter with prepare_index_documents.py to regenerate the normalized corpus if needed.
+3. From Application/backend, run the bundled Python interpreter with -m app.scripts.index_sources to load/update the MongoDB lexical index. Indexing uses local code and requires MongoDB, but not an LLM key.
+4. Start the API from Application/backend with python313/python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000.
+5. Start the frontend from Application/frontend with npm run dev. Open http://localhost:5173 or the Vite URL shown in the terminal.
+6. Check API readiness at http://127.0.0.1:8000/api/health. MongoDB must respond to ping; answer generation is marked configured when a provider key is present.
+
+PROJECT STATUS AND OBSERVATIONS
+The core source acquisition, normalization, local lexical indexing, retrieval, evidence gate, prompt construction, provider generation, citation checks, and basic conversation persistence are implemented. The prepared corpus includes NVD as well as ATT&CK and KEV, even though some older root README wording mentions only ATT&CK and KEV. The application is a prototype: it has heuristic evidence metrics, limited retrieval scaling, a small diagnostic evaluation set, no cross-encoder stage, no active vector retrieval, and no parsers for the planned future sources. UI component directories are placeholders while the actual UI remains consolidated in App.jsx. Several credential/config files exist in the broader workspace and must remain private.
+
+This document summarizes the reviewed files and manifests. Large runtime dependencies, raw source snapshots, generated corpus lines, and every individual third-party package file are described by folder and function rather than listed one by one, since they are downloaded data/runtime content rather than project-authored logic.

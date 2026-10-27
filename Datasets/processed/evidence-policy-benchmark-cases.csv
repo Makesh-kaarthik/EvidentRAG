@@ -1,0 +1,73 @@
+case_id,query,expected_upstream_id,top5_upstream_ids,retrieval_hit_at_5,policy,accepted,relevance,coverage,latency_ms_median,gold_source_citation_available
+lsass_credential_dumping,PowerShell reads LSASS memory to collect password hashes and cached credentials.,T1003.001,T1003.001|T1098.001|T1059.001|T1547.008|T1059,True,no_gate,True,0.8212,0.4762,1.578,True
+lsass_credential_dumping,PowerShell reads LSASS memory to collect password hashes and cached credentials.,T1003.001,T1003.001|T1098.001|T1059.001|T1547.008|T1059,True,relevance_only,True,0.8212,0.4762,1.579,True
+lsass_credential_dumping,PowerShell reads LSASS memory to collect password hashes and cached credentials.,T1003.001,T1003.001|T1098.001|T1059.001|T1547.008|T1059,True,coverage_only,True,0.8212,0.4762,1.529,True
+lsass_credential_dumping,PowerShell reads LSASS memory to collect password hashes and cached credentials.,T1003.001,T1003.001|T1098.001|T1059.001|T1547.008|T1059,True,current,True,0.8212,0.4762,1.729,True
+powershell_execution,An encoded PowerShell script executes commands on a compromised endpoint.,T1059.001,T1059.001|T1059|T1552.003|T1027.010|T1574.007,True,no_gate,True,0.4742,0.8,1.398,True
+powershell_execution,An encoded PowerShell script executes commands on a compromised endpoint.,T1059.001,T1059.001|T1059|T1552.003|T1027.010|T1574.007,True,relevance_only,True,0.4742,0.8,1.407,True
+powershell_execution,An encoded PowerShell script executes commands on a compromised endpoint.,T1059.001,T1059.001|T1059|T1552.003|T1027.010|T1574.007,True,coverage_only,True,0.4742,0.8,1.391,True
+powershell_execution,An encoded PowerShell script executes commands on a compromised endpoint.,T1059.001,T1059.001|T1059|T1552.003|T1027.010|T1574.007,True,current,True,0.4742,0.8,1.373,True
+rdp_valid_account,A stolen employee account connects to another workstation over Remote Desktop.,T1021.001,T1021.001|T1563.002|T1133|T1649|T1550.003,True,no_gate,True,0.8578,0.75,1.265,True
+rdp_valid_account,A stolen employee account connects to another workstation over Remote Desktop.,T1021.001,T1021.001|T1563.002|T1133|T1649|T1550.003,True,relevance_only,True,0.8578,0.75,1.301,True
+rdp_valid_account,A stolen employee account connects to another workstation over Remote Desktop.,T1021.001,T1021.001|T1563.002|T1133|T1649|T1550.003,True,coverage_only,True,0.8578,0.75,1.326,True
+rdp_valid_account,A stolen employee account connects to another workstation over Remote Desktop.,T1021.001,T1021.001|T1563.002|T1133|T1649|T1550.003,True,current,True,0.8578,0.75,1.302,True
+scheduled_task_logon,Malware creates a scheduled task that runs whenever a user logs on.,T1053.005,T1053.005|T1053|T1547.001|T1648|T1678,True,no_gate,True,0.7601,0.8571,0.975,True
+scheduled_task_logon,Malware creates a scheduled task that runs whenever a user logs on.,T1053.005,T1053.005|T1053|T1547.001|T1648|T1678,True,relevance_only,True,0.7601,0.8571,0.899,True
+scheduled_task_logon,Malware creates a scheduled task that runs whenever a user logs on.,T1053.005,T1053.005|T1053|T1547.001|T1648|T1678,True,coverage_only,True,0.7601,0.8571,0.933,True
+scheduled_task_logon,Malware creates a scheduled task that runs whenever a user logs on.,T1053.005,T1053.005|T1053|T1547.001|T1648|T1678,True,current,True,0.7601,0.8571,0.985,True
+targeted_email_attachment,A weaponized attachment arrives in a targeted email to gain initial access.,T1566.001,T1566.002|T1566.001|T1566.003|T1598.002|T1598.003,True,no_gate,True,0.6386,0.8,1.374,True
+targeted_email_attachment,A weaponized attachment arrives in a targeted email to gain initial access.,T1566.001,T1566.002|T1566.001|T1566.003|T1598.002|T1598.003,True,relevance_only,True,0.6386,0.8,1.405,True
+targeted_email_attachment,A weaponized attachment arrives in a targeted email to gain initial access.,T1566.001,T1566.002|T1566.001|T1566.003|T1598.002|T1598.003,True,coverage_only,True,0.6386,0.8,1.401,True
+targeted_email_attachment,A weaponized attachment arrives in a targeted email to gain initial access.,T1566.001,T1566.002|T1566.001|T1566.003|T1598.002|T1598.003,True,current,True,0.6386,0.8,1.377,True
+clear_windows_logs,The intruder uses wevtutil to erase Windows Security event records.,T1685.005,T1685.005|T1685.001|T1578.003|T1070.008|T1070.007,True,no_gate,True,0.7876,0.9167,1.298,True
+clear_windows_logs,The intruder uses wevtutil to erase Windows Security event records.,T1685.005,T1685.005|T1685.001|T1578.003|T1070.008|T1070.007,True,relevance_only,True,0.7876,0.9167,1.079,True
+clear_windows_logs,The intruder uses wevtutil to erase Windows Security event records.,T1685.005,T1685.005|T1685.001|T1578.003|T1070.008|T1070.007,True,coverage_only,True,0.7876,0.9167,1.048,True
+clear_windows_logs,The intruder uses wevtutil to erase Windows Security event records.,T1685.005,T1685.005|T1685.001|T1578.003|T1070.008|T1070.007,True,current,True,0.7876,0.9167,1.107,True
+disable_antivirus,Malware disables antivirus protection and tampers with endpoint defenses.,T1685,T1685|T1685.003|T1526|T1027.005|T1027,True,no_gate,True,0.7715,0.7692,1.363,True
+disable_antivirus,Malware disables antivirus protection and tampers with endpoint defenses.,T1685,T1685|T1685.003|T1526|T1027.005|T1027,True,relevance_only,True,0.7715,0.7692,1.457,True
+disable_antivirus,Malware disables antivirus protection and tampers with endpoint defenses.,T1685,T1685|T1685.003|T1526|T1027.005|T1027,True,coverage_only,True,0.7715,0.7692,1.415,True
+disable_antivirus,Malware disables antivirus protection and tampers with endpoint defenses.,T1685,T1685|T1685.003|T1526|T1027.005|T1027,True,current,True,0.7715,0.7692,1.412,True
+windows_service_backdoor,The attacker installs a malicious Windows service to maintain a backdoor.,T1543.003,T1204.005|T1543.002|T1505.006|T1053.006|T1218.003,False,no_gate,True,0.5118,0.8889,1.569,False
+windows_service_backdoor,The attacker installs a malicious Windows service to maintain a backdoor.,T1543.003,T1204.005|T1543.002|T1505.006|T1053.006|T1218.003,False,relevance_only,True,0.5118,0.8889,1.634,False
+windows_service_backdoor,The attacker installs a malicious Windows service to maintain a backdoor.,T1543.003,T1204.005|T1543.002|T1505.006|T1053.006|T1218.003,False,coverage_only,True,0.5118,0.8889,1.664,False
+windows_service_backdoor,The attacker installs a malicious Windows service to maintain a backdoor.,T1543.003,T1204.005|T1543.002|T1505.006|T1053.006|T1218.003,False,current,True,0.5118,0.8889,1.573,False
+archive_via_utility,Collected files are compressed into a password-protected archive using 7-Zip.,T1560.001,T1560.001|T1560|T1560.003|T1560.002|T1027.015,True,no_gate,True,0.6626,0.8,0.936,True
+archive_via_utility,Collected files are compressed into a password-protected archive using 7-Zip.,T1560.001,T1560.001|T1560|T1560.003|T1560.002|T1027.015,True,relevance_only,True,0.6626,0.8,0.96,True
+archive_via_utility,Collected files are compressed into a password-protected archive using 7-Zip.,T1560.001,T1560.001|T1560|T1560.003|T1560.002|T1027.015,True,coverage_only,True,0.6626,0.8,0.913,True
+archive_via_utility,Collected files are compressed into a password-protected archive using 7-Zip.,T1560.001,T1560.001|T1560|T1560.003|T1560.002|T1027.015,True,current,True,0.6626,0.8,0.879,True
+system_information,The operator runs systeminfo to learn the host operating system and hardware configuration.,T1082,T1082|T1016|T1018|T1217|T1592,True,no_gate,True,0.7304,0.9,1.506,True
+system_information,The operator runs systeminfo to learn the host operating system and hardware configuration.,T1082,T1082|T1016|T1018|T1217|T1592,True,relevance_only,True,0.7304,0.9,1.546,True
+system_information,The operator runs systeminfo to learn the host operating system and hardware configuration.,T1082,T1082|T1016|T1018|T1217|T1592,True,coverage_only,True,0.7304,0.9,1.515,True
+system_information,The operator runs systeminfo to learn the host operating system and hardware configuration.,T1082,T1082|T1016|T1018|T1217|T1592,True,current,True,0.7304,0.9,1.435,True
+rdp_lateral_movement,An attacker uses RDP to move laterally from one Windows host to another.,T1021.001,T1563.002|T1021.001|T1021|T1563|T1210,True,no_gate,True,0.5409,0.8889,1.166,True
+rdp_lateral_movement,An attacker uses RDP to move laterally from one Windows host to another.,T1021.001,T1563.002|T1021.001|T1021|T1563|T1210,True,relevance_only,True,0.5409,0.8889,1.143,True
+rdp_lateral_movement,An attacker uses RDP to move laterally from one Windows host to another.,T1021.001,T1563.002|T1021.001|T1021|T1563|T1210,True,coverage_only,True,0.5409,0.8889,1.091,True
+rdp_lateral_movement,An attacker uses RDP to move laterally from one Windows host to another.,T1021.001,T1563.002|T1021.001|T1021|T1563|T1210,True,current,True,0.5409,0.8889,1.221,True
+browser_credential_theft,Malware steals credentials from browser and operating-system credential caches.,T1555,T1003.005|T1606|T1098.001|T1003.001|T1556.004,False,no_gate,True,0.6216,0.6667,1.833,False
+browser_credential_theft,Malware steals credentials from browser and operating-system credential caches.,T1555,T1003.005|T1606|T1098.001|T1003.001|T1556.004,False,relevance_only,True,0.6216,0.6667,1.743,False
+browser_credential_theft,Malware steals credentials from browser and operating-system credential caches.,T1555,T1003.005|T1606|T1098.001|T1003.001|T1556.004,False,coverage_only,True,0.6216,0.6667,1.826,False
+browser_credential_theft,Malware steals credentials from browser and operating-system credential caches.,T1555,T1003.005|T1606|T1098.001|T1003.001|T1556.004,False,current,True,0.6216,0.6667,1.842,False
+out_weather,What will the weather be in Mumbai tomorrow?,,,False,no_gate,True,0.0,0.0,0.063,False
+out_weather,What will the weather be in Mumbai tomorrow?,,,False,relevance_only,False,0.0,0.0,0.057,False
+out_weather,What will the weather be in Mumbai tomorrow?,,,False,coverage_only,False,0.0,0.0,0.058,False
+out_weather,What will the weather be in Mumbai tomorrow?,,,False,current,False,0.0,0.0,0.057,False
+out_recipe,Give me a recipe for paneer butter masala.,,T1195.003|T1567|T1036.004|T1542.001|T1102,False,no_gate,True,0.0058,0.1667,0.548,False
+out_recipe,Give me a recipe for paneer butter masala.,,T1195.003|T1567|T1036.004|T1542.001|T1102,False,relevance_only,False,0.0058,0.1667,0.502,False
+out_recipe,Give me a recipe for paneer butter masala.,,T1195.003|T1567|T1036.004|T1542.001|T1102,False,coverage_only,False,0.0058,0.1667,0.466,False
+out_recipe,Give me a recipe for paneer butter masala.,,T1195.003|T1567|T1036.004|T1542.001|T1102,False,current,False,0.0058,0.1667,0.454,False
+out_bicycle,How do I repair a broken bicycle chain?,,T1548.004|T1490|T1505.006|T1547.006|T1195,False,no_gate,True,0.3691,0.5,0.573,False
+out_bicycle,How do I repair a broken bicycle chain?,,T1548.004|T1490|T1505.006|T1547.006|T1195,False,relevance_only,True,0.3691,0.5,0.569,False
+out_bicycle,How do I repair a broken bicycle chain?,,T1548.004|T1490|T1505.006|T1547.006|T1195,False,coverage_only,True,0.3691,0.5,0.611,False
+out_bicycle,How do I repair a broken bicycle chain?,,T1548.004|T1490|T1505.006|T1547.006|T1195,False,current,True,0.3691,0.5,0.628,False
+out_capital,What is the capital city of Japan?,,T1552.005,False,no_gate,True,0.0458,0.3333,0.1,False
+out_capital,What is the capital city of Japan?,,T1552.005,False,relevance_only,False,0.0458,0.3333,0.098,False
+out_capital,What is the capital city of Japan?,,T1552.005,False,coverage_only,True,0.0458,0.3333,0.097,False
+out_capital,What is the capital city of Japan?,,T1552.005,False,current,False,0.0458,0.3333,0.096,False
+out_physics,Explain quantum entanglement in simple terms.,,T1595.003|T1566.001|T1496.004|T1586.003|T1595.001,False,no_gate,True,0.2731,0.6,0.333,False
+out_physics,Explain quantum entanglement in simple terms.,,T1595.003|T1566.001|T1496.004|T1586.003|T1595.001,False,relevance_only,True,0.2731,0.6,0.325,False
+out_physics,Explain quantum entanglement in simple terms.,,T1595.003|T1566.001|T1496.004|T1586.003|T1595.001,False,coverage_only,True,0.2731,0.6,0.322,False
+out_physics,Explain quantum entanglement in simple terms.,,T1595.003|T1566.001|T1496.004|T1586.003|T1595.001,False,current,True,0.2731,0.6,0.324,False
+out_sports,Who won the 2026 World Cup?,,T1535|T1548.004|T1195.001|T1700|T1698,False,no_gate,True,0.1629,0.5,0.225,False
+out_sports,Who won the 2026 World Cup?,,T1535|T1548.004|T1195.001|T1700|T1698,False,relevance_only,True,0.1629,0.5,0.341,False
+out_sports,Who won the 2026 World Cup?,,T1535|T1548.004|T1195.001|T1700|T1698,False,coverage_only,True,0.1629,0.5,0.272,False
+out_sports,Who won the 2026 World Cup?,,T1535|T1548.004|T1195.001|T1700|T1698,False,current,True,0.1629,0.5,0.208,False

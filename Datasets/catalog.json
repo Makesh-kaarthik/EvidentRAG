@@ -1,0 +1,93 @@
+{
+  "catalog_version": 1,
+  "purpose": "Source registry for Cyber EvidentRAG knowledge retrieval and separate detection benchmarks.",
+  "sources": [
+    {
+      "id": "mitre-attack-enterprise-stix",
+      "name": "MITRE ATT&CK Enterprise",
+      "category": "threat-knowledge",
+      "recommended_priority": 1,
+      "format": "STIX 2.1 JSON bundle",
+      "acquisition_url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack-20.0.json",
+      "source_page": "https://github.com/mitre-attack/attack-stix-data",
+      "license_url": "https://github.com/mitre-attack/attack-stix-data/blob/master/LICENSE.txt",
+      "license_summary": "MITRE ATT&CK license permits research, development, and commercial use; reproduce its copyright designation and license with copies.",
+      "attribution": "© 2026 The MITRE Corporation. This work is reproduced and distributed with the permission of The MITRE Corporation.",
+      "refresh": "On each ATT&CK release; pin a version for reproducible indexing.",
+      "rag_use": "Yes. Parse STIX objects into source-linked tactic, technique, mitigation, and relationship records.",
+      "local_path": "raw/mitre_attack_enterprise_20.0.json",
+      "status": "downloaded; normalization and local indexing implemented"
+    },
+    {
+      "id": "cisa-kev",
+      "name": "CISA Known Exploited Vulnerabilities Catalog",
+      "category": "vulnerability-knowledge",
+      "recommended_priority": 2,
+      "format": "JSON or CSV",
+      "acquisition_url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+      "source_page": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+      "license_url": "https://github.com/cisagov/kev-data/blob/develop/LICENSE",
+      "license_summary": "CISA's KEV dataset is distributed under CC0 1.0. Third-party links keep their own terms. Use does not authorize CISA/DHS marks or imply endorsement.",
+      "refresh": "Check daily or weekly and upsert by CVE ID; retain dateAdded and dueDate.",
+      "rag_use": "Yes. Index description, vendor/product, required action, dates, and direct references.",
+      "local_path": "raw/cisa_known_exploited_vulnerabilities.json",
+      "status": "downloaded; normalization and local indexing implemented"
+    },
+    {
+      "id": "nvd-cve-api-2",
+      "name": "NIST National Vulnerability Database CVE API 2.0",
+      "category": "vulnerability-knowledge",
+      "recommended_priority": 3,
+      "format": "Paginated JSON API",
+      "acquisition_url": "https://nvd.nist.gov/feeds/json/cve/2.0/nvdcve-2.0-2026.json.zip",
+      "source_page": "https://nvd.nist.gov/developers/vulnerabilities",
+      "license_url": "https://nvd.nist.gov/general/terms-of-use",
+      "license_summary": "Review NVD terms and record rights for third-party content referenced in individual CVEs; do not assume every linked artifact is public domain.",
+      "refresh": "Use modified-date windows and pagination; observe NVD rate limits. An API key is recommended for larger syncs.",
+      "rag_use": "Yes. Index CVE descriptions and selected assessment fields; preserve CVE ID, references, metrics, weaknesses, and affected configurations as metadata.",
+      "status": "2026 yearly feed supported by acquire_sources.py and prepare_index_documents.py"
+    },
+    {
+      "id": "mitre-cwe-capec",
+      "name": "MITRE CWE and CAPEC catalogs",
+      "category": "weakness-and-attack-knowledge",
+      "recommended_priority": 4,
+      "format": "XML/CSV downloads",
+      "acquisition_url": "https://cwe.mitre.org/data/downloads.html",
+      "source_page": "https://capec.mitre.org/data/index.html",
+      "license_url": "https://cwe.mitre.org/about/termsofuse.html",
+      "license_summary": "Check the current terms on each MITRE catalog before reuse; retain identifiers, citations, and attribution.",
+      "refresh": "On each published catalog release.",
+      "rag_use": "Yes. Link weakness IDs and attack patterns to CVEs and ATT&CK where supported.",
+      "status": "recommended; parser/download not implemented"
+    },
+    {
+      "id": "cisa-advisories",
+      "name": "CISA cybersecurity and ICS advisories",
+      "category": "advisory-knowledge",
+      "recommended_priority": 5,
+      "format": "HTML pages and linked PDF/JSON files",
+      "acquisition_url": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+      "source_page": "https://www.cisa.gov/news-events/cybersecurity-advisories",
+      "license_url": "https://www.cisa.gov/about/website-policies",
+      "license_summary": "Check CISA website policies and any third-party material linked from each advisory; preserve publication/update dates and original links.",
+      "refresh": "Monitor new and updated advisories.",
+      "rag_use": "Yes. Extract advisory narrative and mitigations; keep publication IDs and source URLs.",
+      "status": "recommended; connector/parser not implemented"
+    },
+    {
+      "id": "cic-ids-2017",
+      "name": "CIC-IDS2017",
+      "category": "network-detection-benchmark",
+      "recommended_priority": 6,
+      "format": "PCAP, labeled flows, and CSV features",
+      "acquisition_url": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "source_page": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "license_url": "https://www.unb.ca/cic/datasets/ids-2017.html",
+      "license_summary": "The source describes public research access and requires citation; it does not present a simple open-data license on the dataset page. Confirm rights before redistribution or non-research use.",
+      "refresh": "Static research benchmark; version and checksums should be recorded.",
+      "rag_use": "No. Keep separate for supervised detection-model evaluation; do not embed raw PCAPs or flow rows as general knowledge.",
+      "status": "optional benchmark; not downloaded"
+    }
+  ]
+}

@@ -1,0 +1,2245 @@
+{
+  "evaluation": "deterministic evidence-gate policy comparison",
+  "generated_at_note": "Run timestamp intentionally omitted for reproducible content.",
+  "corpus_document_count": 2524,
+  "query_count": 54,
+  "answerable_query_count": 44,
+  "unanswerable_query_count": 10,
+  "gate_thresholds": {
+    "minimum_relevance": 0.12,
+    "minimum_query_coverage": 0.3,
+    "current_confidence_weights": {
+      "coverage": 0.65,
+      "relevance": 0.35
+    },
+    "top_k": 5
+  },
+  "policies": {
+    "no_gate": {
+      "answerable_queries": 44,
+      "unanswerable_queries": 10,
+      "answerable_accept_rate": 1.0,
+      "false_abstention_rate": 0.0,
+      "unanswerable_accept_rate": 1.0,
+      "potential_unsupported_generation_rate": 1.0,
+      "overall_abstention_rate": 0.0,
+      "mean_gate_latency_ms": 0.015527440740740741,
+      "median_gate_latency_ms": 0.0151998
+    },
+    "relevance_only": {
+      "answerable_queries": 44,
+      "unanswerable_queries": 10,
+      "answerable_accept_rate": 1.0,
+      "false_abstention_rate": 0.0,
+      "unanswerable_accept_rate": 0.9,
+      "potential_unsupported_generation_rate": 0.9,
+      "overall_abstention_rate": 0.018518518518518517,
+      "mean_gate_latency_ms": 0.014966514814814815,
+      "median_gate_latency_ms": 0.014842600000000001
+    },
+    "coverage_only": {
+      "answerable_queries": 44,
+      "unanswerable_queries": 10,
+      "answerable_accept_rate": 1.0,
+      "false_abstention_rate": 0.0,
+      "unanswerable_accept_rate": 0.8,
+      "potential_unsupported_generation_rate": 0.8,
+      "overall_abstention_rate": 0.037037037037037035,
+      "mean_gate_latency_ms": 0.015049588888888889,
+      "median_gate_latency_ms": 0.0147324
+    },
+    "current": {
+      "answerable_queries": 44,
+      "unanswerable_queries": 10,
+      "answerable_accept_rate": 1.0,
+      "false_abstention_rate": 0.0,
+      "unanswerable_accept_rate": 0.8,
+      "potential_unsupported_generation_rate": 0.8,
+      "overall_abstention_rate": 0.037037037037037035,
+      "mean_gate_latency_ms": 0.017201196296296295,
+      "median_gate_latency_ms": 0.0151007
+    }
+  },
+  "citation_validity": {
+    "status": "not_measured",
+    "reason": "This benchmark does not generate answers or contain human-labeled answer/citation judgments."
+  },
+  "latency_scope": "Evidence gate evaluation only; excludes retrieval, model generation, and citation validation.",
+  "latency_repetitions_per_case_and_policy": 500,
+  "limitations": [
+    "The unanswerable controls are a small, hand-authored out-of-corpus set and require domain review.",
+    "Answerable labels come from the existing retrieval benchmark; gate acceptance does not establish answer correctness.",
+    "Potential unsupported generation rate is the fraction of out-of-corpus cases the gate would pass, not an observed answer error rate.",
+    "Gate latency is a local microbenchmark and varies by machine and runtime load."
+  ],
+  "cases": {
+    "no_gate": [
+      {
+        "id": "attack_exact_technique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7514443054834484,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014066
+      },
+      {
+        "id": "attack_powershell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.755860324327484,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0163986
+      },
+      {
+        "id": "attack_credential_dumping",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8406323554377044,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0144814
+      },
+      {
+        "id": "attack_spearphishing_attachment",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8660325162512953,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012510199999999999
+      },
+      {
+        "id": "attack_remote_services",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.848598192637239,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014624
+      },
+      {
+        "id": "attack_credential_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7589618565310216,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0153134
+      },
+      {
+        "id": "attack_lateral_movement_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7478486431825155,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0113962
+      },
+      {
+        "id": "kev_log4shell_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8165862099498106,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014736
+      },
+      {
+        "id": "kev_printnightmare_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7824563571501632,
+        "coverage": 0.75,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0117288
+      },
+      {
+        "id": "kev_moveit_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7864871711339524,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011443199999999999
+      },
+      {
+        "id": "kev_log4shell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8657926317403236,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0211538
+      },
+      {
+        "id": "attack_command_interpreter_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8410727389039633,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0164052
+      },
+      {
+        "id": "kev_teamcity_auth_bypass",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8671614351386052,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0122018
+      },
+      {
+        "id": "attack_valid_accounts_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386409562682847,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0138576
+      },
+      {
+        "id": "attack_brute_force_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7662596145979437,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0137452
+      },
+      {
+        "id": "attack_obfuscation_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7899283993229277,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.017528400000000003
+      },
+      {
+        "id": "attack_account_discovery_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386973459482532,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.017756
+      },
+      {
+        "id": "attack_public_app_exploitation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8241477022985311,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015664
+      },
+      {
+        "id": "attack_scheduled_task_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7724942622892631,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0172746
+      },
+      {
+        "id": "attack_rdp_lateral_movement",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8752574109202559,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.01324
+      },
+      {
+        "id": "attack_vnc_remote_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7901047170625547,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0126196
+      },
+      {
+        "id": "attack_system_information_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.802563711196931,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.021546199999999998
+      },
+      {
+        "id": "attack_network_segmentation_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8431545780224504,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016497599999999998
+      },
+      {
+        "id": "attack_privileged_account_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8332156888119293,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0223508
+      },
+      {
+        "id": "attack_initial_access_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7996620353908775,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0151568
+      },
+      {
+        "id": "kev_exchange_server_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8161914969150774,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0130002
+      },
+      {
+        "id": "kev_follina_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7713270928345644,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0166894
+      },
+      {
+        "id": "kev_outlook_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8611416414701224,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0144518
+      },
+      {
+        "id": "kev_fortinet_ssl_vpn_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.877764430247733,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0158626
+      },
+      {
+        "id": "kev_ivanti_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8234779606333584,
+        "coverage": 0.5714285714285714,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0127896
+      },
+      {
+        "id": "kev_panos_globalprotect_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8781546610207513,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0134416
+      },
+      {
+        "id": "attack_obfuscation_term_match",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7708359363625211,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0160338
+      },
+      {
+        "id": "attack_command_obfuscation_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8395993919229161,
+        "coverage": 0.5833333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014449
+      },
+      {
+        "id": "attack_host_system_information",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8279578602802016,
+        "coverage": 0.8181818181818182,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0228358
+      },
+      {
+        "id": "attack_operating_system_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8260029436967603,
+        "coverage": 0.5555555555555556,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0172172
+      },
+      {
+        "id": "attack_public_facing_application_exploit",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7392354134525091,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0148314
+      },
+      {
+        "id": "attack_vulnerable_internet_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.747751976569438,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016237400000000003
+      },
+      {
+        "id": "attack_network_segmentation_prevention",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7831136873750569,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016401199999999998
+      },
+      {
+        "id": "attack_isolated_network_zones",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7934259895551335,
+        "coverage": 0.6,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0182302
+      },
+      {
+        "id": "attack_admin_privilege_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8337398470965864,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0205404
+      },
+      {
+        "id": "attack_privileged_account_mgmt_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8281381678281493,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0236308
+      },
+      {
+        "id": "attack_local_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8658587572447443,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014684599999999999
+      },
+      {
+        "id": "attack_domain_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8643147548180348,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0152428
+      },
+      {
+        "id": "attack_obfuscation_detection_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7315249273257108,
+        "coverage": 0.7142857142857143,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.01382
+      },
+      {
+        "id": "ood_owasp_top10",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7912466987945852,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0178596
+      },
+      {
+        "id": "ood_cvss_scoring",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7457985422561769,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.017345199999999998
+      },
+      {
+        "id": "ood_cwe_definition",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.5418456307192931,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.011535199999999999
+      },
+      {
+        "id": "ood_splunk_query",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6551030198726312,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.019146
+      },
+      {
+        "id": "ood_incident_playbook",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6885734867338221,
+        "coverage": 0.25,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0160638
+      },
+      {
+        "id": "ood_cloud_policy",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7968997546670513,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.013399
+      },
+      {
+        "id": "ood_zero_day_advisory",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6306421628187943,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0147112
+      },
+      {
+        "id": "ood_packet_analysis",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7127816233033288,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0160556
+      },
+      {
+        "id": "ood_weather",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.0,
+        "coverage": 0.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.006381599999999999
+      },
+      {
+        "id": "ood_quantum_physics",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7178517743327602,
+        "coverage": 0.4,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0118994
+      }
+    ],
+    "relevance_only": [
+      {
+        "id": "attack_exact_technique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7514443054834484,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0137318
+      },
+      {
+        "id": "attack_powershell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.755860324327484,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0155928
+      },
+      {
+        "id": "attack_credential_dumping",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8406323554377044,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014163199999999999
+      },
+      {
+        "id": "attack_spearphishing_attachment",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8660325162512953,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012306800000000001
+      },
+      {
+        "id": "attack_remote_services",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.848598192637239,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014141
+      },
+      {
+        "id": "attack_credential_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7589618565310216,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015969
+      },
+      {
+        "id": "attack_lateral_movement_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7478486431825155,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011194
+      },
+      {
+        "id": "kev_log4shell_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8165862099498106,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0123906
+      },
+      {
+        "id": "kev_printnightmare_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7824563571501632,
+        "coverage": 0.75,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011257199999999998
+      },
+      {
+        "id": "kev_moveit_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7864871711339524,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0096142
+      },
+      {
+        "id": "kev_log4shell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8657926317403236,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0145518
+      },
+      {
+        "id": "attack_command_interpreter_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8410727389039633,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015612000000000001
+      },
+      {
+        "id": "kev_teamcity_auth_bypass",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8671614351386052,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0126432
+      },
+      {
+        "id": "attack_valid_accounts_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386409562682847,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0138388
+      },
+      {
+        "id": "attack_brute_force_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7662596145979437,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0134756
+      },
+      {
+        "id": "attack_obfuscation_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7899283993229277,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0170586
+      },
+      {
+        "id": "attack_account_discovery_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386973459482532,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0175494
+      },
+      {
+        "id": "attack_public_app_exploitation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8241477022985311,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0153006
+      },
+      {
+        "id": "attack_scheduled_task_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7724942622892631,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016715800000000003
+      },
+      {
+        "id": "attack_rdp_lateral_movement",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8752574109202559,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013023
+      },
+      {
+        "id": "attack_vnc_remote_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7901047170625547,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0125006
+      },
+      {
+        "id": "attack_system_information_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.802563711196931,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016965599999999997
+      },
+      {
+        "id": "attack_network_segmentation_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8431545780224504,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0167836
+      },
+      {
+        "id": "attack_privileged_account_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8332156888119293,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.022150200000000002
+      },
+      {
+        "id": "attack_initial_access_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7996620353908775,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014695999999999999
+      },
+      {
+        "id": "kev_exchange_server_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8161914969150774,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0130726
+      },
+      {
+        "id": "kev_follina_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7713270928345644,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0160342
+      },
+      {
+        "id": "kev_outlook_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8611416414701224,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0149286
+      },
+      {
+        "id": "kev_fortinet_ssl_vpn_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.877764430247733,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0129814
+      },
+      {
+        "id": "kev_ivanti_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8234779606333584,
+        "coverage": 0.5714285714285714,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012612
+      },
+      {
+        "id": "kev_panos_globalprotect_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8781546610207513,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0131856
+      },
+      {
+        "id": "attack_obfuscation_term_match",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7708359363625211,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0154048
+      },
+      {
+        "id": "attack_command_obfuscation_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8395993919229161,
+        "coverage": 0.5833333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014374399999999999
+      },
+      {
+        "id": "attack_host_system_information",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8279578602802016,
+        "coverage": 0.8181818181818182,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.019687200000000002
+      },
+      {
+        "id": "attack_operating_system_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8260029436967603,
+        "coverage": 0.5555555555555556,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0173668
+      },
+      {
+        "id": "attack_public_facing_application_exploit",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7392354134525091,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0148888
+      },
+      {
+        "id": "attack_vulnerable_internet_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.747751976569438,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016119599999999998
+      },
+      {
+        "id": "attack_network_segmentation_prevention",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7831136873750569,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0161368
+      },
+      {
+        "id": "attack_isolated_network_zones",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7934259895551335,
+        "coverage": 0.6,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0179928
+      },
+      {
+        "id": "attack_admin_privilege_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8337398470965864,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0202716
+      },
+      {
+        "id": "attack_privileged_account_mgmt_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8281381678281493,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0252498
+      },
+      {
+        "id": "attack_local_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8658587572447443,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013813800000000001
+      },
+      {
+        "id": "attack_domain_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8643147548180348,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0153844
+      },
+      {
+        "id": "attack_obfuscation_detection_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7315249273257108,
+        "coverage": 0.7142857142857143,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0147964
+      },
+      {
+        "id": "ood_owasp_top10",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7912466987945852,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.017707999999999998
+      },
+      {
+        "id": "ood_cvss_scoring",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7457985422561769,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.016695799999999997
+      },
+      {
+        "id": "ood_cwe_definition",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.5418456307192931,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.010623200000000001
+      },
+      {
+        "id": "ood_splunk_query",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6551030198726312,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.020149
+      },
+      {
+        "id": "ood_incident_playbook",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6885734867338221,
+        "coverage": 0.25,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0133178
+      },
+      {
+        "id": "ood_cloud_policy",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7968997546670513,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0132424
+      },
+      {
+        "id": "ood_zero_day_advisory",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6306421628187943,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.014960800000000002
+      },
+      {
+        "id": "ood_packet_analysis",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7127816233033288,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0159002
+      },
+      {
+        "id": "ood_weather",
+        "answerable": false,
+        "accepted": false,
+        "relevance": 0.0,
+        "coverage": 0.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0074908
+      },
+      {
+        "id": "ood_quantum_physics",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7178517743327602,
+        "coverage": 0.4,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0105768
+      }
+    ],
+    "coverage_only": [
+      {
+        "id": "attack_exact_technique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7514443054834484,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014039999999999999
+      },
+      {
+        "id": "attack_powershell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.755860324327484,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.018566199999999998
+      },
+      {
+        "id": "attack_credential_dumping",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8406323554377044,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014211
+      },
+      {
+        "id": "attack_spearphishing_attachment",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8660325162512953,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0123386
+      },
+      {
+        "id": "attack_remote_services",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.848598192637239,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013933999999999998
+      },
+      {
+        "id": "attack_credential_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7589618565310216,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0151926
+      },
+      {
+        "id": "attack_lateral_movement_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7478486431825155,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011300800000000001
+      },
+      {
+        "id": "kev_log4shell_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8165862099498106,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011916399999999999
+      },
+      {
+        "id": "kev_printnightmare_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7824563571501632,
+        "coverage": 0.75,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0111988
+      },
+      {
+        "id": "kev_moveit_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7864871711339524,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0097444
+      },
+      {
+        "id": "kev_log4shell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8657926317403236,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0134182
+      },
+      {
+        "id": "attack_command_interpreter_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8410727389039633,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015325
+      },
+      {
+        "id": "kev_teamcity_auth_bypass",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8671614351386052,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0123438
+      },
+      {
+        "id": "attack_valid_accounts_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386409562682847,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013752
+      },
+      {
+        "id": "attack_brute_force_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7662596145979437,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0132294
+      },
+      {
+        "id": "attack_obfuscation_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7899283993229277,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0170814
+      },
+      {
+        "id": "attack_account_discovery_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386973459482532,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.017682
+      },
+      {
+        "id": "attack_public_app_exploitation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8241477022985311,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0154218
+      },
+      {
+        "id": "attack_scheduled_task_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7724942622892631,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0160556
+      },
+      {
+        "id": "attack_rdp_lateral_movement",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8752574109202559,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0130438
+      },
+      {
+        "id": "attack_vnc_remote_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7901047170625547,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0124484
+      },
+      {
+        "id": "attack_system_information_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.802563711196931,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016714200000000002
+      },
+      {
+        "id": "attack_network_segmentation_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8431545780224504,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0161084
+      },
+      {
+        "id": "attack_privileged_account_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8332156888119293,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0245032
+      },
+      {
+        "id": "attack_initial_access_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7996620353908775,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0147584
+      },
+      {
+        "id": "kev_exchange_server_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8161914969150774,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013028
+      },
+      {
+        "id": "kev_follina_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7713270928345644,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016096199999999998
+      },
+      {
+        "id": "kev_outlook_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8611416414701224,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0147064
+      },
+      {
+        "id": "kev_fortinet_ssl_vpn_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.877764430247733,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0144886
+      },
+      {
+        "id": "kev_ivanti_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8234779606333584,
+        "coverage": 0.5714285714285714,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0123642
+      },
+      {
+        "id": "kev_panos_globalprotect_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8781546610207513,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0129818
+      },
+      {
+        "id": "attack_obfuscation_term_match",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7708359363625211,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015466200000000001
+      },
+      {
+        "id": "attack_command_obfuscation_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8395993919229161,
+        "coverage": 0.5833333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0151916
+      },
+      {
+        "id": "attack_host_system_information",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8279578602802016,
+        "coverage": 0.8181818181818182,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0205902
+      },
+      {
+        "id": "attack_operating_system_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8260029436967603,
+        "coverage": 0.5555555555555556,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0171422
+      },
+      {
+        "id": "attack_public_facing_application_exploit",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7392354134525091,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014676999999999999
+      },
+      {
+        "id": "attack_vulnerable_internet_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.747751976569438,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.01598
+      },
+      {
+        "id": "attack_network_segmentation_prevention",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7831136873750569,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.01734
+      },
+      {
+        "id": "attack_isolated_network_zones",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7934259895551335,
+        "coverage": 0.6,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0205276
+      },
+      {
+        "id": "attack_admin_privilege_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8337398470965864,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0201326
+      },
+      {
+        "id": "attack_privileged_account_mgmt_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8281381678281493,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0231332
+      },
+      {
+        "id": "attack_local_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8658587572447443,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0146048
+      },
+      {
+        "id": "attack_domain_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8643147548180348,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015641
+      },
+      {
+        "id": "attack_obfuscation_detection_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7315249273257108,
+        "coverage": 0.7142857142857143,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013748799999999999
+      },
+      {
+        "id": "ood_owasp_top10",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7912466987945852,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0174526
+      },
+      {
+        "id": "ood_cvss_scoring",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7457985422561769,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0166702
+      },
+      {
+        "id": "ood_cwe_definition",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.5418456307192931,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0108412
+      },
+      {
+        "id": "ood_splunk_query",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6551030198726312,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.017755
+      },
+      {
+        "id": "ood_incident_playbook",
+        "answerable": false,
+        "accepted": false,
+        "relevance": 0.6885734867338221,
+        "coverage": 0.25,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.015019399999999999
+      },
+      {
+        "id": "ood_cloud_policy",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7968997546670513,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0140084
+      },
+      {
+        "id": "ood_zero_day_advisory",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6306421628187943,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0144788
+      },
+      {
+        "id": "ood_packet_analysis",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7127816233033288,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0171052
+      },
+      {
+        "id": "ood_weather",
+        "answerable": false,
+        "accepted": false,
+        "relevance": 0.0,
+        "coverage": 0.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0071246
+      },
+      {
+        "id": "ood_quantum_physics",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7178517743327602,
+        "coverage": 0.4,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0100536
+      }
+    ],
+    "current": [
+      {
+        "id": "attack_exact_technique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7514443054834484,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0143336
+      },
+      {
+        "id": "attack_powershell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.755860324327484,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0246446
+      },
+      {
+        "id": "attack_credential_dumping",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8406323554377044,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0141908
+      },
+      {
+        "id": "attack_spearphishing_attachment",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8660325162512953,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0123118
+      },
+      {
+        "id": "attack_remote_services",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.848598192637239,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0145024
+      },
+      {
+        "id": "attack_credential_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7589618565310216,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0154564
+      },
+      {
+        "id": "attack_lateral_movement_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7478486431825155,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0114242
+      },
+      {
+        "id": "kev_log4shell_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8165862099498106,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0120868
+      },
+      {
+        "id": "kev_printnightmare_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7824563571501632,
+        "coverage": 0.75,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.011408
+      },
+      {
+        "id": "kev_moveit_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7864871711339524,
+        "coverage": 1.0,
+        "exact_identifier": true,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0099184
+      },
+      {
+        "id": "kev_log4shell_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8657926317403236,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013228199999999999
+      },
+      {
+        "id": "attack_command_interpreter_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8410727389039633,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015234600000000001
+      },
+      {
+        "id": "kev_teamcity_auth_bypass",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8671614351386052,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012365600000000001
+      },
+      {
+        "id": "attack_valid_accounts_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386409562682847,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0138108
+      },
+      {
+        "id": "attack_brute_force_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7662596145979437,
+        "coverage": 0.8333333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013215999999999999
+      },
+      {
+        "id": "attack_obfuscation_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7899283993229277,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.017903600000000002
+      },
+      {
+        "id": "attack_account_discovery_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8386973459482532,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0185786
+      },
+      {
+        "id": "attack_public_app_exploitation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8241477022985311,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0152362
+      },
+      {
+        "id": "attack_scheduled_task_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7724942622892631,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.09988720000000001
+      },
+      {
+        "id": "attack_rdp_lateral_movement",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8752574109202559,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0131718
+      },
+      {
+        "id": "attack_vnc_remote_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7901047170625547,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012566
+      },
+      {
+        "id": "attack_system_information_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.802563711196931,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0175274
+      },
+      {
+        "id": "attack_network_segmentation_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8431545780224504,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0165704
+      },
+      {
+        "id": "attack_privileged_account_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8332156888119293,
+        "coverage": 0.9,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0220642
+      },
+      {
+        "id": "attack_initial_access_tactic",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7996620353908775,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0147712
+      },
+      {
+        "id": "kev_exchange_server_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8161914969150774,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0130944
+      },
+      {
+        "id": "kev_follina_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7713270928345644,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0168624
+      },
+      {
+        "id": "kev_outlook_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8611416414701224,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.01445
+      },
+      {
+        "id": "kev_fortinet_ssl_vpn_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.877764430247733,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0140428
+      },
+      {
+        "id": "kev_ivanti_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8234779606333584,
+        "coverage": 0.5714285714285714,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.012291
+      },
+      {
+        "id": "kev_panos_globalprotect_command_injection",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8781546610207513,
+        "coverage": 0.7777777777777778,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.013585000000000002
+      },
+      {
+        "id": "attack_obfuscation_term_match",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7708359363625211,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016434999999999998
+      },
+      {
+        "id": "attack_command_obfuscation_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8395993919229161,
+        "coverage": 0.5833333333333334,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.015205
+      },
+      {
+        "id": "attack_host_system_information",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8279578602802016,
+        "coverage": 0.8181818181818182,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0227014
+      },
+      {
+        "id": "attack_operating_system_discovery",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8260029436967603,
+        "coverage": 0.5555555555555556,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.017133199999999998
+      },
+      {
+        "id": "attack_public_facing_application_exploit",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7392354134525091,
+        "coverage": 0.8,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0150926
+      },
+      {
+        "id": "attack_vulnerable_internet_service",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.747751976569438,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0164534
+      },
+      {
+        "id": "attack_network_segmentation_prevention",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7831136873750569,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.016527
+      },
+      {
+        "id": "attack_isolated_network_zones",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7934259895551335,
+        "coverage": 0.6,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0315404
+      },
+      {
+        "id": "attack_admin_privilege_mitigation",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8337398470965864,
+        "coverage": 0.8888888888888888,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.020479
+      },
+      {
+        "id": "attack_privileged_account_mgmt_exact",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8281381678281493,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0249974
+      },
+      {
+        "id": "attack_local_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8658587572447443,
+        "coverage": 0.6363636363636364,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.014357799999999999
+      },
+      {
+        "id": "attack_domain_account_subtechnique",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.8643147548180348,
+        "coverage": 0.875,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0160758
+      },
+      {
+        "id": "attack_obfuscation_detection_paraphrase",
+        "answerable": true,
+        "accepted": true,
+        "relevance": 0.7315249273257108,
+        "coverage": 0.7142857142857143,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": true,
+        "gate_latency_ms": 0.0151088
+      },
+      {
+        "id": "ood_owasp_top10",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7912466987945852,
+        "coverage": 1.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.021723600000000003
+      },
+      {
+        "id": "ood_cvss_scoring",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7457985422561769,
+        "coverage": 0.75,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0165422
+      },
+      {
+        "id": "ood_cwe_definition",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.5418456307192931,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0116604
+      },
+      {
+        "id": "ood_splunk_query",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6551030198726312,
+        "coverage": 0.625,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0194042
+      },
+      {
+        "id": "ood_incident_playbook",
+        "answerable": false,
+        "accepted": false,
+        "relevance": 0.6885734867338221,
+        "coverage": 0.25,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0137556
+      },
+      {
+        "id": "ood_cloud_policy",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7968997546670513,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.013840199999999999
+      },
+      {
+        "id": "ood_zero_day_advisory",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.6306421628187943,
+        "coverage": 0.6666666666666666,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0154838
+      },
+      {
+        "id": "ood_packet_analysis",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7127816233033288,
+        "coverage": 0.8571428571428571,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.016052800000000002
+      },
+      {
+        "id": "ood_weather",
+        "answerable": false,
+        "accepted": false,
+        "relevance": 0.0,
+        "coverage": 0.0,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0073082
+      },
+      {
+        "id": "ood_quantum_physics",
+        "answerable": false,
+        "accepted": true,
+        "relevance": 0.7178517743327602,
+        "coverage": 0.4,
+        "exact_identifier": false,
+        "retrieved_expected_in_top_k": null,
+        "gate_latency_ms": 0.0102524
+      }
+    ]
+  }
+}
